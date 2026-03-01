@@ -2,6 +2,87 @@
 
 ---
 
+## Session 10 — Token usage tracking in GitHub Issues → Notion
+
+**Date:** 03.01.2026
+**Time spent:** ~45m
+
+### What We Built
+- `~/utils/python/session_tokens.py` — reads current session JSONL, sums all token types, prints `Tokens: XXXXXXX  Cost: XX.XX`
+- Two new Notion DB properties: `Tokens` (number) and `API Equiv ($)` (number)
+- Updated all 5 `notion-sync.yml` workflows to parse and write token/cost data
+- Updated wrap-up skill to run `session_tokens.py` and post combined time+tokens comment
+- Updated `~/Documents/Claude/CLAUDE.md` with new session time-logging format
+
+### What Shipped
+- `bryanfosler/utils` — `python/session_tokens.py` (new file)
+- `bryanfosler/til`, `midi-control`, `pi-setup`, `run-route-generator`, `reddit-research-tool` — `notion-sync.yml` updated in all 5
+- Notion DB patched with two new number properties
+- End-to-end verified: posted test comment, confirmed `Created Notion page for issue #13 (5 min, 1000 tokens, $0.01)` in workflow logs
+
+### Bugs Fixed
+- None
+
+### Decisions Made
+- Token values are raw integers in comments (no M suffix) — keeps regex simple
+- Null (not 0) written to Notion when no token data present — avoids cluttering old issues with zeroes
+- One combined comment per session (`Time: Xm  Tokens: X  Cost: X`) triggers one workflow run
+
+---
+
+## Session 9 — Mac cleanup: zsh fix + API key rotation
+
+**Date:** 03.01.2026
+**Time spent:** ~30m
+
+### What We Built
+- Diagnosed and fixed `compdef: command not found` error on terminal open
+- Found `~/.openclaw/` left behind on Mac with live API keys
+- Rotated Anthropic + Notion API keys; deleted `~/.openclaw/`
+- Verified openclaw/Piper still working on Pi after key rotation
+
+### What Shipped
+- `~/.zshrc` cleaned up (compinit added, then openclaw source line removed)
+- 2 new TIL entries: zsh compdef fix, abandoned CLI key exposure
+- New `zsh/` and `security/` topic folders in TIL repo
+
+### Bugs Fixed
+- `compdef: command not found` on every terminal open (missing compinit before completion source)
+
+### Decisions Made
+- `rm -rf` stays in deny list — user runs destructive commands manually
+
+---
+
+## Session 8 — Claude Code voice hooks + queue-based TTS
+
+**Date:** 03.01.2026
+**Time spent:** ~50m
+
+### What We Built
+- `Stop` hook that reads the last Claude response aloud via macOS `say`, stripping code blocks
+- Queue + daemon system (`tts_enqueue.py` + `tts_daemon.py`) so multiple hooks don't talk over each other
+- `CLAUDE_MUTE=1` env var guard across all hooks for session-based silence
+- `claude-talk` / `claude-quiet` aliases in `~/.zshrc`
+- Switched from PingVoice API to native macOS `say` — no API key, no browser required
+
+### What Shipped
+- `~/.claude/hooks/stop.py` — reads transcript, strips code, speaks response
+- `~/.claude/hooks/utils/tts_enqueue.py` + `tts_daemon.py` — serialized audio queue
+- All four hooks (stop, session_start, notification, subagent_stop) updated
+- `~/.claude/settings.json` wired with Stop hook
+- GitHub issue: bryanfosler/utils#3 (closed), future ideas: #2
+
+### Bugs Fixed
+- Multiple `say` processes spawning concurrently (fixed by queue daemon)
+
+### Decisions Made
+- Skipping code blocks in spoken output is the right call — hearing code read aloud is useless
+- Bryan unsure about always-on voice; next session will revisit and decide direction
+- Future ideas logged: pause/resume, speed control, ding + manual trigger, popup HUD
+
+---
+
 ## Session 7 — Add notion/ TIL entry for Time (hrs) formula
 
 **Date:** 03.01.2026
