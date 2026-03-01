@@ -44,6 +44,31 @@
 
 ---
 
+## Session 4 — Add Week/Month fields for Notion reporting
+
+**Date:** 03.01.2026
+**Time spent:** ~30m
+
+### What We Built
+- Week and Month select properties added to Notion database schema via API
+- All 5 notion-sync.yml workflows updated to populate Week and Month on every sync
+- Backfill script to patch all 44 existing Notion records
+
+### What Shipped
+- 44 existing records backfilled with correct Week/Month values
+- All 5 repos updated and pushed
+- Notion view setup instructions for Weekly Overview, Monthly Overview, By Project, Board
+
+### Bugs Fixed
+- pi-setup had a pre-existing merge conflict in petcam/petcam.py — staged only the workflow file and left the conflict untouched
+- `node -e` can't handle `!` in inline scripts due to shell history expansion — workaround: write script to /tmp file
+
+### Decisions Made
+- Used ISO week format (2026-W09) so groups sort correctly by default in Notion
+- Used select (not formula) for Week/Month — easier to group and aggregate in Notion views
+
+---
+
 ## Session 3 — Add github-actions TIL entries
 
 **Date:** 03.01.2026
