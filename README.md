@@ -15,12 +15,15 @@ Things I've learned, organized by topic with a chronological index.
 | 2026-03-01 | Claude Code  | [Telegram pairing: Devices vs. Pairing flow](claude-code/telegram-pairing-devices-vs-pairing.md) |
 | 2026-03-01 | Claude Code  | [Adding Notion sync to the TIL repo](claude-code/notion-sync-for-til-repo.md) |
 | 2026-03-01 | Claude Code  | [Automating Notion sync setup for new repos](claude-code/notion-sync-automated-setup.md) |
+| 2026-03-01 | GitHub Actions | [Backfilling Notion sync for pre-existing repo content](github-actions/backfill-notion-sync-for-existing-issues.md) |
+| 2026-03-01 | GitHub Actions | [Debugging Actions runs with the gh CLI](github-actions/debugging-runs-with-gh-cli.md) |
 
 ---
 
 ## Topics
 
 - [Claude Code](claude-code/)
+- [GitHub Actions](github-actions/)
 - [iOS](ios/)
 - [Networking](networking/)
 - [Raspberry Pi](raspberry-pi/)
