@@ -14,6 +14,7 @@ Things I've learned, organized by topic with a chronological index.
 | 2026-03-01 | Claude Code  | [Anthropic API key 401 invalid-x-api-key error](claude-code/anthropic-api-key-401.md) |
 | 2026-03-01 | Claude Code  | [Telegram pairing: Devices vs. Pairing flow](claude-code/telegram-pairing-devices-vs-pairing.md) |
 | 2026-03-01 | Claude Code  | [Adding Notion sync to the TIL repo](claude-code/notion-sync-for-til-repo.md) |
+| 2026-03-01 | Claude Code  | [Automating Notion sync setup for new repos](claude-code/notion-sync-automated-setup.md) |
 
 ---
 
