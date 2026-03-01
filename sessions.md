@@ -21,3 +21,23 @@
 ### Decisions Made
 - Store `NOTION_API_KEY` in `~/.claude/.env` for automated `gh secret set` on future repos — no manual key handling needed
 - New repo checklist added to global CLAUDE.md so Notion sync question is always asked
+
+---
+
+## Session 2 — Backfill pre-existing TIL entries into Notion
+
+**Date:** 03.01.2026
+**Time spent:** ~10m
+
+### What We Built
+- Backfill issues for the two TIL entries that existed before Notion sync was set up
+
+### What Shipped
+- Issue #3: iOS device install (45m logged) — closed, synced to Notion
+- Issue #4: Tailscale + Termius (60m logged) — closed, synced to Notion
+
+### Bugs Fixed
+- None
+
+### Decisions Made
+- Backfill pattern: create issue with "Backfill issue for TIL entry added YYYY-MM-DD" body, add Time: comment(s), close
