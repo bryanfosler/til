@@ -19,6 +19,8 @@ Things I've learned, organized by topic with a chronological index.
 | 2026-03-01 | GitHub Actions | [Debugging Actions runs with the gh CLI](github-actions/debugging-runs-with-gh-cli.md) |
 | 2026-03-01 | Notion         | [Adding a human-readable hours formula to a number property](notion/time-hrs-formula-property.md) |
 | 2026-03-01 | Claude Code  | [settings.json permissions: allow/deny rules](claude-code/settings-permissions-allow-deny.md) |
+| 2026-03-01 | zsh          | [compdef requires compinit to run first](zsh/compdef-needs-compinit.md) |
+| 2026-03-01 | Security     | [Abandoned CLI installs can leave API keys on disk](security/abandoned-cli-installs-expose-api-keys.md) |
 
 ---
 
@@ -30,3 +32,5 @@ Things I've learned, organized by topic with a chronological index.
 - [Notion](notion/)
 - [Networking](networking/)
 - [Raspberry Pi](raspberry-pi/)
+- [Security](security/)
+- [zsh](zsh/)
