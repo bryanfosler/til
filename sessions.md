@@ -2,6 +2,25 @@
 
 ---
 
+## Session 7 — Add notion/ TIL entry for Time (hrs) formula
+
+**Date:** 03.01.2026
+**Time spent:** ~10m
+
+### What We Built
+- New `notion/` topic folder with first entry
+
+### What Shipped
+- `notion/time-hrs-formula-property.md` — covers formula syntax, API call, view usage, and formula-is-read-only gotcha
+
+### Bugs Fixed
+- None
+
+### Decisions Made
+- None
+
+---
+
 ## Session 6 — Notion views + Time (hrs) formula
 
 **Date:** 03.01.2026
