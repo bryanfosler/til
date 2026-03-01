@@ -41,3 +41,23 @@
 
 ### Decisions Made
 - Backfill pattern: create issue with "Backfill issue for TIL entry added YYYY-MM-DD" body, add Time: comment(s), close
+
+---
+
+## Session 3 — Add github-actions TIL entries
+
+**Date:** 03.01.2026
+**Time spent:** ~15m
+
+### What We Built
+- New `github-actions/` topic with 2 entries
+
+### What Shipped
+- Backfilling Notion sync for pre-existing repo content
+- Debugging GitHub Actions runs with the gh CLI (run list, run view --log, skipped vs success vs failure)
+
+### Bugs Fixed
+- None
+
+### Decisions Made
+- Gap analysis should happen proactively before wrap-up, not only when Bryan asks
