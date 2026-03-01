@@ -17,6 +17,7 @@ Things I've learned, organized by topic with a chronological index.
 | 2026-03-01 | Claude Code  | [Automating Notion sync setup for new repos](claude-code/notion-sync-automated-setup.md) |
 | 2026-03-01 | GitHub Actions | [Backfilling Notion sync for pre-existing repo content](github-actions/backfill-notion-sync-for-existing-issues.md) |
 | 2026-03-01 | GitHub Actions | [Debugging Actions runs with the gh CLI](github-actions/debugging-runs-with-gh-cli.md) |
+| 2026-03-01 | Claude Code  | [settings.json permissions: allow/deny rules](claude-code/settings-permissions-allow-deny.md) |
 
 ---
 

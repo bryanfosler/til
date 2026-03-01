@@ -2,6 +2,27 @@
 
 ---
 
+## Session 5 — Claude Code permissions settings
+
+**Date:** 03.01.2026
+**Time spent:** ~20m
+
+### What We Built
+- TIL entry for Claude Code `settings.json` permissions (allow/deny rules)
+
+### What Shipped
+- `claude-code/settings-permissions-allow-deny.md`
+- `~/.claude/settings.json` updated with allow + deny rules
+
+### Bugs Fixed
+- None
+
+### Decisions Made
+- Deny rules prioritized around secrets and SSH given Pi setup with key auth
+- `ssh:*` deny accepted knowing it means manual approval for Pi commands
+
+---
+
 ## Session 1 — Initial TIL entries + Notion sync setup
 
 **Date:** 03.01.2026
