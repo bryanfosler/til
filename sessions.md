@@ -2,6 +2,26 @@
 
 ---
 
+## Session 6 — Notion views + Time (hrs) formula
+
+**Date:** 03.01.2026
+**Time spent:** ~10m
+
+### What We Built
+- Logged TIL issue #7 for Notion grouped table view setup
+- Added `Time (hrs)` formula property to Notion database via API
+
+### What Shipped
+- Formula: `round(prop("Time Spent (min)") / 60 * 10) / 10` — displays hours as decimals in all views
+
+### Bugs Fixed
+- None
+
+### Decisions Made
+- Keep raw `Time Spent (min)` for workflow summing; formula column is display-only
+
+---
+
 ## Session 5 — Claude Code permissions settings
 
 **Date:** 03.01.2026
