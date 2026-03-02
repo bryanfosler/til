@@ -23,6 +23,7 @@ Things I've learned, organized by topic with a chronological index.
 | 2026-03-01 | Security     | [Abandoned CLI installs can leave API keys on disk](security/abandoned-cli-installs-expose-api-keys.md) |
 | 2026-03-01 | Raspberry Pi | [Homebridge + Google Nest → Apple HomeKit bridge on Pi (no $5 fee)](raspberry-pi/homebridge-nest-homekit-bridge.md) |
 | 2026-03-01 | Claude Code  | [ssh in deny list = auto-reject, not prompt](claude-code/ssh-deny-vs-prompt.md) |
+| 2026-03-01 | Claude Code  | [openclaw key rotation — dual fields, cooldown reset, update script](claude-code/openclaw-key-rotation-dual-fields-cooldown.md) |
 
 ---
 
