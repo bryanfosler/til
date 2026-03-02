@@ -2,6 +2,29 @@
 
 ---
 
+## Session 12 — Claude Code allow list optimization
+
+**Date:** 03.01.2026
+**Time spent:** ~10m
+
+### What We Built
+- Analyzed 5 sessions of Bash command history to measure auto-approval vs manual approval rates
+- Found 55% of commands needed manual approval; `ssh` (19x), `cd` (15x), `find` (7x) were the top three
+
+### What Shipped
+- `~/.claude/settings.json` updated: added `find`, `cd`, `tail`, `grep` to allow list
+- Approval rate should drop from ~55% to ~22% (ssh and rm remain intentionally manual)
+
+### Bugs Fixed
+- None
+
+### Decisions Made
+- `ssh` stays manual — Pi access should always require a conscious approval
+- `rm` stays manual — too destructive to auto-approve
+- `cd` approved despite being a compound-command prefix (e.g. `cd /path && python3 ...`) — dangerous parts like `rm -rf` are already in deny list
+
+---
+
 ## Session 11 — Piper bot 401 debugging + openclaw key rotation fix
 
 **Date:** 03.01.2026
