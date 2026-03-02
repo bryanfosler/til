@@ -2,6 +2,32 @@
 
 ---
 
+## Session 11 — Piper bot 401 debugging + openclaw key rotation fix
+
+**Date:** 03.01.2026
+**Time spent:** ~50m
+
+### What We Built
+- Diagnosed recurring Anthropic API key 401 errors on Piper (openclaw on Pi)
+- Root cause: `auth-profiles.json` has TWO key fields (`token` + `key`) — previous rotations only updated one
+- Secondary cause: `usageStats` cooldown in auth-profiles.json persists across restarts and blocks valid keys
+- Created `~/update-openclaw-key.sh` on the Pi — updates both fields, clears cooldown, restarts service
+
+### What Shipped
+- `~/update-openclaw-key.sh` on Pi — one-script key rotation
+- TIL entry: `claude-code/openclaw-key-rotation-dual-fields-cooldown.md`
+- `openclaw.json` env block updated with `ANTHROPIC_API_KEY` (belt + suspenders)
+
+### Bugs Fixed
+- Piper bot returning 401 on all messages due to stale/revoked keys in auth-profiles.json
+
+### Decisions Made
+- Secure key rotation workflow: `read -rs 'K?Key: '` (zsh) → `/tmp/.ak` → pipe to Pi via SSH (scp is in deny list)
+- Never paste API keys in Claude Code chat — messages sent to Anthropic servers + stored in history files
+- `read -rsp` is bash-only; zsh equivalent is `read -rs 'K?Key: ' && print`
+
+---
+
 ## Session 10 — Token usage tracking in GitHub Issues → Notion
 
 **Date:** 03.01.2026
