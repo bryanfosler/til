@@ -2,6 +2,29 @@
 
 ---
 
+## Session 6 — Docker UFW Bypass Fix + Obsidian Vault Planning
+
+**Date:** 03.08.2026
+**Time spent:** ~35m
+
+### What We Built
+- Updated `raspberry-pi/docker-bypasses-ufw.md` TIL with real implementation details (catch-all rule ordering, iptables-persistent, per-port targeting)
+- Created TIL backlog issue #23: Learn Obsidian Tasks + Dataview plugins
+
+### What Shipped
+- Docker UFW bypass fixed on Pi (DOCKER-USER chain, port 3000 Tailscale-only, persisted via iptables-persistent)
+- 7am Telegram reminder scheduled via Pi cron for Obsidian vault migration
+
+### Bugs Fixed
+- None (continuation session from previous)
+
+### Decisions Made
+- Open-WebUI (port 3000): Tailscale-only access (not LAN) — zero friction since Mac always has Tailscale running
+- Obsidian: one vault (expand existing ObsidianVault/) rather than separate work/personal/AI vaults — cross-linking and unified search outweigh any organizational benefit of splitting
+- iCloud sync for iPhone Obsidian access (Syncthing doesn't support iOS)
+
+---
+
 ## Session 12 — Claude Code allow list optimization
 
 **Date:** 03.01.2026
@@ -276,3 +299,47 @@
 
 ### Decisions Made
 - Gap analysis should happen proactively before wrap-up, not only when Bryan asks
+
+---
+
+## Session 4 — Discord Guild Message Fix (Post-Migration)
+
+**Date:** 03.08.2026
+**Time spent:** ~45m
+
+### What We Built
+- Diagnostic tooling: raw Discord WebSocket gateway test script to isolate whether events arrive at all
+
+### What Shipped
+- `channels.discord.groupPolicy` changed from `allowlist` → `open` in `openclaw-template.json`
+- Piper bot added as Member to `#general` with View Channel, Send Messages, Read Message History, Attach Files, Embed Links, Add Reactions
+
+### Bugs Fixed
+- Discord guild messages silently dropped after secrets migration — root cause was bot not having View Channel permission in #general
+
+### Decisions Made
+- When Discord bot messages fail silently, skip straight to raw WebSocket gateway test to determine if Discord is even delivering events
+- If no MESSAGE_CREATE events in 30s raw test window, it's a Discord permissions/channel issue — not openclaw config
+- `groupPolicy: "open"` is safe for PiperPi5 since the server is private (Bryan only); dmPolicy still restricts DMs
+
+---
+
+## Session 5 — Fix claude_usage.py Week Reset Day
+
+**Date:** 03.08.2026
+**Time spent:** ~10m
+
+### What We Built
+- Nothing new
+
+### What Shipped
+- `claude_usage.py`: week start now uses Thursday (weekday 3) instead of Monday
+- Bar label updated to `week (Thu↺)` for clarity
+- Day counter now 1=Thu through 7=Wed
+
+### Bugs Fixed
+- Week bar showed "day 7/7, 3% left" on Sundays — was using Mon–Sun calendar week, not Claude's Thu–Wed reset window
+
+### Decisions Made
+- Claude Code Pro weekly limit resets Thursday per claude.ai
+- `/usage` slash command is UI-only, no programmatic output — script reading local JSONL is the right approach
