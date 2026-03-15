@@ -29,6 +29,7 @@ Things I've learned, organized by topic with a chronological index.
 | 2026-03-01 | Claude Code  | [Auditing your allow list by parsing session history](claude-code/auditing-command-approval-rate.md) |
 | 2026-03-08 | Claude Code  | [OpenClaw runtime config: OPENCLAW_CONFIG_PATH + dual gateway token fields](claude-code/openclaw-runtime-config-env-path.md) |
 | 2026-03-08 | zsh          | [Multi-line command paste issues in terminals — use backslash continuation](zsh/multiline-command-paste-backslash.md) |
+| 2026-03-15 | Raspberry Pi | [OpenClaw session JSONL already tracks cost.total per message](raspberry-pi/openclaw-jsonl-cost-tracking.md) |
 
 ---
 
