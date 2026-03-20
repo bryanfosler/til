@@ -21,7 +21,7 @@ Set up remote terminal access to both my Raspberry Pi 5 and MacBook Air using Ta
 
 ## Key details
 
-- Pi Tailscale IP: `100.99.74.37`
+- Pi Tailscale IP: `100.x.x.x` (find yours in the Tailscale app or dashboard)
 - Mac is also enrolled on the same Tailscale network
 - SSH key auth (no password prompts)
 

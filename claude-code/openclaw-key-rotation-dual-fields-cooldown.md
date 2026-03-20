@@ -64,7 +64,7 @@ read -rs 'K?Key: ' && print
 umask 077 && read -rs 'K?Key: ' && print && print -rn -- "$K" > /tmp/.ak
 
 # Pipe to Pi — updates auth-profiles.json, openclaw.json env block, restarts service
-ssh bfosler@bryanfoslerpi5.local "bash ~/update-openclaw-key.sh" < /tmp/.ak && rm /tmp/.ak
+ssh user@your-pi.local "bash ~/update-openclaw-key.sh" < /tmp/.ak && rm /tmp/.ak
 ```
 
 Never paste API keys directly into Claude Code chat — messages are sent to Anthropic's servers and stored in local history files.
@@ -74,7 +74,7 @@ Never paste API keys directly into Claude Code chat — messages are sent to Ant
 Check logs before rotating on the Anthropic console:
 
 ```bash
-ssh bfosler@bryanfoslerpi5.local "npx openclaw logs --plain --limit 20"
+ssh user@your-pi.local "npx openclaw logs --plain --limit 20"
 ```
 
 Look for `HTTP 401 authentication_error: invalid x-api-key` to confirm it's actually a key issue vs. something else.
