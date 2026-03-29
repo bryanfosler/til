@@ -55,6 +55,16 @@ The `read -rsp "prompt"` flag is bash-only. In zsh:
 read -rs 'K?Key: ' && print
 ```
 
+## Gateway token rotation (one command)
+
+SSH into the Pi, then:
+
+```bash
+printf '%s' "$(openssl rand -hex 32)" | openssl enc -aes-256-cbc -pbkdf2 -pass file:/etc/machine-id -out ~/.config/systemd/user/credstore/openclaw-gateway-token.enc && systemctl --user restart openclaw-gateway
+```
+
+`start-secure.sh` decrypts the `.enc` file on startup and injects the token into both `gateway.auth.token` and `gateway.remote.token` automatically.
+
 ## Fix: update script on the Pi
 
 `~/update-openclaw-key.sh` handles everything — updates both key fields, clears the cooldown, restarts the service:
