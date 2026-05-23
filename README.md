@@ -8,6 +8,7 @@ Things I've learned, organized by topic with a chronological index.
 
 | Date       | Topic        | Entry |
 |------------|--------------|-------|
+| 2026-05-23 | Obsidian     | [Tasks + Dataview: a PM's reference](obsidian/tasks-and-dataview-plugins.md) |
 | 2026-03-16 | iOS          | [Shortcuts magic variables resolve by type, not proximity](ios/shortcuts-magic-variable-type-matching.md) |
 | 2026-02-27 | iOS          | [Installing an iOS app on your iPhone (free, no App Store)](ios/xcode-device-install.md) |
 | 2026-02-27 | Networking   | [Tailscale + Termius for remote Mac/Pi access](networking/tailscale-termius-remote-access.md) |
