@@ -2,6 +2,26 @@
 
 ---
 
+## Session 16 — Remove personal info from public entries
+
+**Date:** 03.20.2026
+**Time spent:** ~15m
+
+### What We Built
+- n/a
+
+### What Shipped
+- `networking/tailscale-termius-remote-access.md`: replaced Tailscale IP with generic placeholder
+- `claude-code/openclaw-key-rotation-dual-fields-cooldown.md`: replaced Pi hostname/username with generic placeholders
+
+### Bugs Fixed
+- n/a
+
+### Decisions Made
+- Tailscale IP and Pi hostname are low-risk but unnecessary to expose in a public repo
+
+---
+
 ## Session 6 — Docker UFW Bypass Fix + Obsidian Vault Planning
 
 **Date:** 03.08.2026
